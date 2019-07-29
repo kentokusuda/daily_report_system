@@ -17,15 +17,12 @@ import javax.persistence.Table;
 
 @Table(name = "reports")
 @NamedQueries({
-    @NamedQuery(
-            name = "getAllReports",
-            query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
-            ),
-    @NamedQuery(
-            name = "getReportsCount",
-            query = "SELECT COUNT(r) FROM Report AS r"
-            ),
+        @NamedQuery(name = "getAllReports", query = "SELECT r FROM Report AS r ORDER BY r.id DESC"),
+        @NamedQuery(name = "getReportsCount", query = "SELECT COUNT(r) FROM Report AS r"),
+        @NamedQuery(name = "getMyAllReports", query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"),
+        @NamedQuery(name = "getMyReportsCount", query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee")
 })
+
 @Entity
 public class Report {
     @Id

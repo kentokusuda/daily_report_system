@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    // ログイン処理を実行
+    // ログイン処理
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // 認証結果を格納する変数
@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
                     plain_pass,
                     (String) this.getServletContext().getAttribute("salt"));
 
-            // 社員番号とパスワードが正しいかチェックする
+            // 社員番号とパスワードが正しいかチェック
             try {
                 e = em.createNamedQuery("checkLoginCodeAndPassword", Employee.class)
                         .setParameter("code", code)
