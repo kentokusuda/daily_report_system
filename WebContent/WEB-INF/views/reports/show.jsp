@@ -24,9 +24,13 @@
                             <td><pre><c:out value="${report.content}" /></pre></td>
                         </tr>
                         <tr>
-                            <th>登録日時</th>
+                            <th>出社時刻</th>
                             <td><fmt:formatDate value="${report.created_at}"
-                                    pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                                    pattern="HH:mm" /></td>
+                        </tr>
+                        <tr>
+                            <th>退社時刻</th>
+
                         </tr>
                         <tr>
                             <th>更新日時</th>
