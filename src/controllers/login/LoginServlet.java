@@ -117,9 +117,9 @@ public class LoginServlet extends HttpServlet {
                 //日付
                 r.setReport_date(report_date);
 
-                //この2つはあとで消す
-                r.setTitle("タイトルテストです");
-                r.setContent("内容テストです");
+                //この2つはあとで消す?
+                r.setTitle("タイトル");
+                r.setContent("内容を入力してください");
 
                 //時間ふたつ
                 Timestamp currentTime = new Timestamp(System.currentTimeMillis());

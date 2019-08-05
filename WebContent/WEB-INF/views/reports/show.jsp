@@ -30,7 +30,10 @@
                         </tr>
                         <tr>
                             <th>退社時刻</th>
-
+                           <c:if test="${not empty report.logout_time}">
+                             <td><fmt:formatDate value="${report.logout_time}"
+                                    pattern="HH:mm" /></td>
+                             </c:if>
                         </tr>
                         <tr>
                             <th>更新日時</th>

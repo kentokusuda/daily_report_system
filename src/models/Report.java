@@ -21,8 +21,8 @@ import javax.persistence.Table;
         @NamedQuery(name = "getReportsCount", query = "SELECT COUNT(r) FROM Report AS r"),
         @NamedQuery(name = "getMyAllReports", query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"),
         @NamedQuery(name = "getMyReportsCount", query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"),
-        @NamedQuery(name = "checkMyReportCount", query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee AND r.report_date = :report_date")
-
+        @NamedQuery(name = "checkMyReportCount", query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee AND r.report_date = :report_date"),
+        @NamedQuery(name  = "getLatestReport", query = "SELECT r FROM Report AS r WHERE r.employee = :employee AND r.report_date = :report_date")
 })
 
 @Entity
@@ -51,6 +51,9 @@ public class Report {
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
+
+    @Column(name = "logout_time", nullable = true)
+    private Timestamp logout_time;
 
     public Integer getId() {
         return id;
@@ -106,5 +109,13 @@ public class Report {
 
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public Timestamp getLogout_time() {
+        return logout_time;
+    }
+
+    public void setLogout_time(Timestamp logout_time) {
+        this.logout_time = logout_time;
     }
 }
