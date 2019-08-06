@@ -21,7 +21,14 @@
                         </tr>
                         <tr>
                             <th>内容</th>
-                            <td><pre><c:out value="${report.content}" /></pre></td>
+                            <c:choose>
+                                <c:when test="${empty report.content}">
+                                    <td>内容が未入力です</td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td><pre><c:out value="${report.content}" /></pre></td>
+                                </c:otherwise>
+                            </c:choose>
                         </tr>
                         <tr>
                             <th>出社時刻</th>

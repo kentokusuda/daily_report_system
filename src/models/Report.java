@@ -39,11 +39,11 @@ public class Report {
     @Column(name = "report_date", nullable = false)
     private Date report_date;
 
-    @Column(name = "title", length = 255, nullable = false)
+    @Column(name = "title", length = 255, nullable = true)
     private String title;
 
     @Lob
-    @Column(name = "content", nullable = false)
+    @Column(name = "content", nullable = true)
     private String content;
 
     @Column(name = "created_at", nullable = false)
